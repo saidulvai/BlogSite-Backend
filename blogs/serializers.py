@@ -15,6 +15,18 @@ class BlogsSerializer(serializers.ModelSerializer):
         if ratings:
             return sum(rating.rating for rating in ratings) / ratings.count()
         return None
+    
+    def save(self):
+        title = self.validated_data['title']
+        body = self.validated_data['body']
+        author = self.validated_data['author']
+        category = self.validated_data['category']
+        if Blogs.objects.filter(title=title, body=body, category=category).exists():
+            raise serializers.ValidationError("You have already created this blog.")
+        blog_obj = Blogs(article=title, body=body, category=category)
+        blog_obj.save()
+        print("blog_obj",blog_obj)
+        return blog_obj
 
 
 class CategorySerializer(serializers.ModelSerializer):
