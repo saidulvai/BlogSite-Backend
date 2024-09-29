@@ -22,7 +22,7 @@ from rest_framework.authtoken.models import Token
 class AccountViewset(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [OwnerPatchOnlyOrReadOnly]
+    # permission_classes = [OwnerPatchOnlyOrReadOnly]
 
 class UserRegistrationApiView(APIView):
     serializer_class = UserRegisterSerializer
