@@ -63,32 +63,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-# CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOWED_ORIGINS = [
-    
-    "http://localhost:5501",
-    "http://127.0.0.1:8000",
-    
-]
-CORS_ALLOW_METHODS = [
-    'GET',
-    'POST',
-    'PUT',
-    'DELETE',
-    'OPTIONS'
-]
-
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-]
+CORS_ALLOW_ALL_ORIGINS = True
 ROOT_URLCONF = 'blog_site.urls'
 
 TEMPLATES = [
