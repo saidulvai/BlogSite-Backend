@@ -21,9 +21,9 @@ class BlogsSerializer(serializers.ModelSerializer):
         body = self.validated_data['body']
         author = self.validated_data['author']
         category = self.validated_data['category']
-        if Blogs.objects.filter(title=title, body=body, category=category).exists():
+        if Blogs.objects.filter(title=title, body=body,author=author category=category).exists():
             raise serializers.ValidationError("You have already created this blog.")
-        blog_obj = Blogs(article=title, body=body, category=category)
+        blog_obj = Blogs(article=title, body=body,author=author, category=category)
         blog_obj.save()
         print("blog_obj",blog_obj)
         return blog_obj
