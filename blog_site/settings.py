@@ -29,13 +29,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS =['https://blogsite-backend-1.onrender.com', 'http://127.0.0.1:8000/']
 
+LOGIN_URL = "http://127.0.0.1:5500/login.html"
 # Application definition
 
 INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
-    
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
